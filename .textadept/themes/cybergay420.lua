@@ -69,7 +69,7 @@ property['style.default'] = 'font:$(font),size:$(fontsize),'..
                             'fore:$(color.green),back:$(color.black)'
 property['style.linenumber'] = 'fore:$(color.green),back:$(color.dark_blue)'
 --property['style.controlchar'] =
-property['style.indentguide'] = 'fore:$(color.light_black)'
+property['style.indentguide'] = 'fore:$(color.black),back:$(color.blue)'
 property['style.calltip'] = 'fore:$(color.light_grey),back:$(color.light_black)'
 property['style.folddisplaytext'] = 'fore:$(color.light_green)'
 
@@ -79,7 +79,7 @@ property['style.comment'] = 'fore:$(color.dark_grey)'
 property['style.constant'] = 'fore:$(color.red)'
 property['style.embedded'] = '$(style.keyword),back:$(color.light_black)'
 property['style.error'] = 'fore:$(color.red),italics'
-property['style.function'] = 'fore:$(color.blue)'
+property['style.function'] = 'fore:$(color.white),back:$(color.red)'
 property['style.identifier'] = ''
 property['style.keyword'] = 'fore:$(color.light_white),back:$(color.dark_pink)'
 property['style.label'] = 'fore:$(color.orange)'
@@ -89,7 +89,7 @@ property['style.preprocessor'] = 'fore:$(color.pink)'
 property['style.regex'] = 'fore:$(color.light_green)'
 property['style.string'] = 'fore:$(color.purple)'
 property['style.type'] = 'fore:$(color.red)'
-property['style.variable'] = 'fore:$(color.light_blue)'
+property['style.variable'] = 'fore:$(color.light_red)'
 property['style.whitespace'] = ''
 
 -- Multiple Selection and Virtual Space
@@ -103,12 +103,12 @@ buffer:set_sel_fore(true, property_int['color.green'])
 buffer:set_sel_back(true, property_int['color.red'])
 --buffer.sel_alpha =
 buffer.caret_fore = property_int['color.red']
-buffer.caret_line_back = property_int['color.light_black']
---buffer.caret_line_back_alpha =
+buffer.caret_line_back = property_int['color.dark_blue']
+-- buffer.caret_line_back_alpha = 127
 
 -- Fold Margin.
-buffer:set_fold_margin_colour(true, property_int['color.black'])
-buffer:set_fold_margin_hi_colour(true, property_int['color.black'])
+buffer:set_fold_margin_colour(true, property_int['color.blue'])
+buffer:set_fold_margin_hi_colour(true, property_int['color.blue'])
 
 -- Markers.
 local MARK_BOOKMARK = textadept.bookmarks.MARK_BOOKMARK
@@ -119,8 +119,8 @@ buffer.marker_back[textadept.run.MARK_WARNING] = property_int['color.yellow']
 --buffer.marker_fore[textadept.run.MARK_ERROR] = property_int['color.black']
 buffer.marker_back[textadept.run.MARK_ERROR] = property_int['color.red']
 for i = 25, 31 do -- fold margin markers
-  buffer.marker_fore[i] = property_int['color.black']
-  buffer.marker_back[i] = property_int['color.dark_grey']
+  buffer.marker_fore[i] = property_int['color.blue']
+  buffer.marker_back[i] = property_int['color.red']
   buffer.marker_back_selected[i] = property_int['color.light_grey']
 end
 
